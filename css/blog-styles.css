@@ -1,0 +1,55 @@
+/* blog-styles.css */
+
+/* Hero Section */
+.blog-hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.blog-hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.blog-title {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Meta Section */
+.blog-meta {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.blog-meta h4, .blog-meta h2 {
+    margin: 5px 0;
+}
+
+/* Blog Content */
+.blog-content {
+    padding: 20px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.blog-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.blog-content img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}

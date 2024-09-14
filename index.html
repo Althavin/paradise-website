@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Paradise Booking</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>    
+    <script src="js/client-reviews.js"></script> <!-- For slideshow -->
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+        </style>   
+    html {
+        scroll-behavior: smooth;
+    }    
+</head>
+<body>
+   
+    <!-- Header -->
+<header style="background-color: #ffffff;" class="fixed top-0 w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-2 md:p-4">
+        <!-- Clickable Logo -->
+        <a href="index.html">
+            <img src="images/main-logo.png" alt="Paradise Booking Logo" class="h-10 md:h-14">
+        </a>
+
+        <!-- Mobile "Get in Touch" Button (centered) -->
+        <div class="md:hidden absolute left-1/2 transform -translate-x-1/2">
+            <a href="tel:+254790564940" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Get in Touch</a>
+        </div>        
+        <div class="md:hidden">
+            <!-- Mobile Menu Button -->
+           <button id="menu-toggle" class="focus:outline-none rounded-full border-4 border-blue-500 bg-white p-2">
+                <svg class="w-8 h-8 text-black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+        </div>
+
+        <!-- Desktop Menu -->
+        <div id="menu" class="hidden md:flex flex-1 justify-end">
+            <nav>
+                <ul class="flex space-x-8 pr-4">
+                    <li><a href="index.html" class="text-black hover:text-blue-600 font-bold">Home</a></li>
+                    <li><a href="admin/index.html" class="text-black hover:text-blue-600">Blogs</a></li>
+                    <li><a href="about.html" class="text-black hover:text-blue-600">About</a></li>
+                    <li><a href="contact.html" class="text-black hover:text-blue-600">Contacts</a></li>
+                    <li><a href="#maps" class="text-black hover:text-blue-600">Locate Us</a></li>
+                        <li>
+                            <a href="tel:+254790564940" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-black hover:text-white">
+                                GET IN TOUCH
+                            </a>
+                    </li>
+                                    </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <nav>
+            <ul class="flex flex-col space-y-4 px-4">
+                <li><a href="index.html" class="text-black hover:text-yellow-300 font-bold">Home</a></li>
+                <li><a href="admin/index.html" class="text-black hover:text-yellow-300 font-bold">Blogs</a></li>
+                <li><a href="about.html" class="text-black hover:text-yellow-300 font-bold">About</a></li>
+                <li><a href="contact.html" class="text-black hover:text-yellow-300 font-bold">Contacts</a></li>
+            </ul>
+        </nav>        
+    </div>
+</header>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+<!-- Hero Section -->
+<section id="hero-section" class="relative w-full h-screen overflow-hidden mt-16">
+    <!-- Desktop Video -->
+    <video autoplay muted loop poster="images/hero-image.jpg" id="hero-video-desktop" class="absolute inset-0 top-7 w-full h-full object-cover hidden md:block">
+        <source src="images/hero-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Tablet/iPad Video -->
+    <video autoplay muted loop poster="images/hero-ipad.png" id="hero-video-tablet" class="absolute inset-0 top-7 w-full h-full object-cover hidden md:block lg:hidden">
+        <source src="images/hero-ipad.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Mobile Video -->
+    <video autoplay muted loop poster="images/hero-mobile.png" id="hero-video-mobile" class="absolute inset-0 top-7 w-full h-full object-cover block md:hidden">
+        <source src="images/hero-mobile.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Text and Logo Content -->
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center space-y-12 px-4">
+        <!-- Logo Image -->
+        <img src="images/main-logo.png" alt="Paradise Apartments Logo" class="h-20 mb-4 mx-auto"> <!-- Reduced the margin-bottom to 4 -->
+
+        <!-- Title Text with Gradient and Zoom Effect -->
+        <h1 class="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 animate-zoom-in">
+            Paradise Apartments
+        </h1>
+
+        <!-- Subtitle Text -->
+        <p class="text-white text-2xl md:text-3xl font-bold">
+            EXPERIENCE COMFORT AND PEACE OF MIND
+        </p>
+
+        <!-- Airbnb and Booking.com Links -->
+        <div class="text-white text-lg mt-16">
+            <p>Available on 
+                <a href="https://www.airbnb.com/rooms/667792504834499759?adults=1&children=0&enable_m3_private_room=true&infants=0&pets=0&search_mode=regular_search&check_in=2024-09-14&check_out=2024-09-17&source_impression_id=p3_1726301048_P3cNCJgWz6fm6a8b&previous_page_section_name=1000&federated_search_id=07b582c6-40e5-4c27-88df-b65a3e71040e" target="_blank" class="underline text-pink-500 hover:text-blue-500">AirBnB</a> & 
+                <a href="https://www.booking.com/hotel/ke/modern-amp-comfy-mt-kenya-sunset-view-apartment.en-gb.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaHaIAQGYAQm4ARfIAQzYAQHoAQH4AQOIAgGoAgO4AqaHlbcGwAIB0gIkN2NiMWNkYmYtYjkwYy00OTUxLThkNjUtM2NlMjQ4NTNkYzNj2AIG4AIB&sid=670c25f3a0879a00aaa724f2034192f2&dist=0;group_adults=2;group_children=0;hapos=3;hpos=3;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1726301110;srpvid=690538d7da4a02a1;type=total;ucfs=1&" target="_blank" class="underline text-blue-500 hover:text-white">Booking.com</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section> 
+    <div class="absolute bottom-7 right-4 md:right-4 md:bottom-7 md:w-auto w-full flex justify-center">
+    <a href="https://wa.me/254790564940" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600">
+        Chat with us on WhatsApp
+    </a>
+</div>
+</section>
+
+<!-- Our Services Section -->
+       <section id="our-services" class="py-16 bg-white" >
+            <div class="container mx-auto px-12"> 
+               <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                   <div class="service-item bg-blue-100 p-6 rounded-lg shadow-md text-center">
+                       <img src="images/service1.jpg" alt="Service 1" class="h-48 w-full object-cover rounded">
+                       <h3 class="mt-4 text-xl font-semibold">Short Term Room Booking</h3>
+                       <p class="mt-2">Find the best BnB's in town</p>
+                       <div class="mt-4">
+                        <button onclick="window.location.href='https://www.booking.com/hotel/ke/modern-amp-comfy-mt-kenya-sunset-view-apartment.en-gb.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaHaIAQGYAQm4ARfIAQzYAQHoAQH4AQyIAgGoAgO4ApblorYGwAIB0gIkZDI4ODRjMDYtMzk5OC00ODYwLTkwZjMtMGJiYmYxNjU1NDI02AIG4AIB&sid=670c25f3a0879a00aaa724f2034192f2&dest_id=12685429;dest_type=hotel;dist=0;group_adults=2;group_children=0;hapos=2;hpos=2;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1724428980;srpvid=c82670d48ec32033;type=total;ucfs=1&'"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-black transition duration-300 ease-in-out">
+    Book a room &rarr;
+</button>
+                                       </div>
+                   </div>
+                   <div class="service-item bg-blue-100 p-6 rounded-lg shadow-md text-center">
+                       <img src="images/service2.jpg" alt="Service 2" class="h-48 w-full object-cover rounded">
+                       <h3 class="mt-4 text-xl font-semibold">Furnished Apartments (Long-Term Stay)</h3>
+                       <p class="mt-2">Find Luxury in Your Stay</p>
+                   </div>
+                   <div class="service-item bg-blue-100 p-6 rounded-lg shadow-md text-center">
+                       <img src="images/service3.jpg" alt="Service 3" class="h-48 w-full object-cover rounded">
+                       <h3 class="mt-4 text-xl font-semibold">Rental Apartments</h3>
+                       <p class="mt-2">Rent high-end apartments in Embu</p>
+                   </div>
+               </div>
+           </div>
+       </section>
+   
+       
+       <div id="luxury-banner" class="bg-blue-800 text-white py-8 overflow-hidden hover:bg-black">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-2 slide-in-right">Experience Comfort and Style!</h2>
+            <p class="text-lg slide-in-right delay-2"> Contact us at +254 790 564940</p>
+        </div>
+    </div>
+
+
+  <!-- Amenities Section -->
+<section id="amenities" class="py-12 bg-blue-50">
+    <div class="container mx-auto px-5 lg:px-10">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Amenities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Amenity 1 -->
+            <div class="relative overflow-hidden rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                <img src="images/amenity1.jpg" alt="Rooftop Lounge Area" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+                    <h3 class="text-xl font-semibold text-white text-shadow-md">Rooftop Lounge Area</h3>
+                </div>
+            </div>
+
+            <!-- Amenity 2 -->
+            <div class="relative overflow-hidden rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                <img src="images/amenity2.jpg" alt="Spacious Parking" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+                    <h3 class="text-xl font-semibold text-white text-shadow-md">Spacious Parking</h3>
+                </div>
+            </div>
+
+            <!-- Amenity 3 (CCTV) with Double Height -->
+            <div class="relative overflow-hidden rounded-lg shadow-lg transform transition duration-500 hover:scale-105 lg:row-span-2">
+                <img src="images/amenity3.jpg" alt="CCTV" class="w-full h-96 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+                    <h3 class="text-xl font-semibold text-white text-shadow-md">CCTV</h3>
+                </div>
+            </div>
+
+            <!-- Amenity 4 -->
+            <div class="relative overflow-hidden rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                <img src="images/amenity4.jpg" alt="Lift" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+                    <h3 class="text-xl font-semibold text-white text-shadow-md">Lift</h3>
+                </div>
+            </div>
+
+            <!-- Amenity 5 -->
+            <div class="relative overflow-hidden rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                <img src="images/amenity5.jpg" alt="Convenience Shop" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+                    <h3 class="text-xl font-semibold text-white text-shadow-md">Convenience Shop</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Even new section-->
+<section id="blogs-list" class="py-12 bg-white">
+    <!-- Increased padding on the left and right (from px-6 to px-12) -->
+    <div class="container mx-auto px-12"> 
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800">Latest Blog Posts</h2>
+            <p class="mt-2 text-gray-600">Check out our latest blog posts</p>
+        </div>
+        
+        <!-- Blog Post Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <div class="bg-blue-100 rounded-lg shadow-lg overflow-hidden">
+                <img src="admin/assets/img/post1-bg.jpg" alt="Blog 1" class="w-full h-48 object-cover rounded-t-lg">
+                <div class="p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">How To Choose the Perfect Short-Term Rental for Your Stay</h3>
+                    <p class="text-gray-600 mb-4">24th August 2024</p>
+                    <div class="mt-4">
+                        <button onclick="window.location.href='admin/post1.html'" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black">Read More ></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="bg-blue-100 rounded-lg shadow-lg overflow-hidden">
+                <img src="admin/assets/img/blog2.jpg" alt="Blog 2" class="w-full h-48 object-cover rounded-t-lg">
+                <div class="p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">How To Use Booking.com to Book Your Next Stay</h3>
+                    <p class="text-gray-600 mb-4">14th August 2024</p>
+                    <div class="mt-4">
+                        <button onclick="window.location.href='admin/post2.html'" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black">Read More ></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="bg-blue-100 rounded-lg shadow-lg overflow-hidden">
+                <img src="admin/assets/img/blog3.jpg" alt="Blog 3" class="w-full h-48 object-cover rounded-t-lg">
+                <div class="p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Must See Places to Visit in Embu</h3>
+                    <p class="text-gray-600 mb-4">July 28 2024</p>
+                    <div class="mt-4">
+                        <button onclick="window.location.href='admin/post3.html'" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black">Read More ></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "View All Posts" Button -->
+        <div class="mt-8 text-center">
+            <a href="admin/index.html" class="inline-block bg-black text-white py-2 px-4 rounded hover:bg-blue-500 transition-colors mx-auto">
+                View All Posts &rarr;
+            </a>
+        </div>
+      
+</section>
+
+
+<!-- Clients Review Section -->
+<section id="client-reviews" class="bg-blue-100 py-12">
+    <div class="container mx-auto px-6">
+  
+      <!-- Part 1: Slideshow of Reviews -->
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Client Reviews</h2>
+  
+        <!-- Slideshow Container -->
+        <div id="reviews-slideshow" class="flex flex-wrap justify-center space-x-4"> 
+          <!-- Review cards will be dynamically injected here by JS -->
+        </div>
+      </div>
+
+  
+      <!-- Part 2: Feedback Form -->
+      <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-6">Submit Your Feedback</h3>
+        <form id="feedback-form" class="space-y-6">
+          <!-- Name Input -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" name="name" id="name" required
+                   class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
+  
+          <!-- Picture Upload -->
+          <div>
+            <label for="picture" class="block text-sm font-medium text-gray-700">Picture (.jpg)</label>
+            <input type="file" name="picture" id="picture" accept=".jpg"
+                   class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
+  
+          <!-- Email Input (Optional) -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email (Optional)</label>
+            <input type="email" name="email" id="email"
+                   class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
+  
+          <!-- Feedback Input -->
+          <div>
+            <label for="feedback" class="block text-sm font-medium text-gray-700">Feedback</label>
+            <textarea name="feedback" id="feedback" rows="4" required
+                      class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+          </div>
+  
+          <!-- Submit Button -->
+          <button type="submit"
+                  class="bg-blue-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-black">
+            Submit Feedback
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+<!-- About Us Section -->
+<section id="about" class="py-12 bg-slate-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 md:px-8">
+        <!-- About Image -->
+        <div class="about-image flex-1 flex justify-center">
+            <img src="images/about-us.jpg" alt="About Us" class="rounded-lg w-4/5 object-cover">
+        </div>
+        <!-- About Textbox -->
+        <div class="about-text flex-1 text-left">
+            <h2 class="text-3xl font-bold mb-4">About Us</h2>
+            <p class="text-lg mb-6 leading-relaxed">We at Paradise Booking are dedicated to providing top-notch rental and accommodation services. Our properties are equipped with luxurious amenities that ensure a comfortable and memorable stay for all our guests.</p>
+            <a href="about.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-black transition-colors duration-300">Learn More &rarr;</a>
+        </div>
+    </div>
+</section>
+
+   <!-- Maps Section -->
+<section id="maps" style="width: 100%; margin: 2; padding: 1;background-color: #dbeafe;">
+    <h2 style="text-align: left; margin-bottom: 10px; font-size: 24px; font-weight: bold; color: #333;padding-left: 25px;">Find Us Here</h2>
+    <p style="text-align: left; margin-bottom: 20px; color: #000000; padding-left: 25px;">Location: Gakwegori along Embu-Meru Highway (GF67+X5F)</p>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6738669349375!2d37.46077225429737!3d-0.4875579888866285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262d77cae066ff%3A0x24687d65808f134!2sParadise%20Apartments%2C%20Embu!5e0!3m2!1sen!2ske!4v1724177489910!5m2!1sen!2ske" 
+        style="width: 100%; height: 300px; border: 10; display: block; border-radius: 10px; padding: 20px; " 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<!--Footer Section-->
+<footer class="footer section bg-[#ffffff] py-8">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
+        
+        <!-- Quick Links Section -->
+        <div class="w-full md:w-1/4 flex justify-center">
+          <div class="widget text-center">
+            <h4 class="text-red text-green text-lg font-bold mb-4">Quick Links</h4>
+            <ul class="list-none space-y-2">
+              <li><a href="index.html" class="text-blue-600 font-bold hover:text-black">Home</a></li>
+              <li><a href="admin/index.html" class="text-black hover:text-blue-600">Blog</a></li>
+              <li><a href="about.html" class="text-black hover:text-blue-600">About</a></li>
+              <li><a href="contact.html" class="text-black hover:text-blue-600">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+  
+       <!-- Logo & Copyright Section -->
+<div class="w-full md:w-1/4 flex justify-center md:justify-start">
+    <div class="widget text-center md:text-center">
+        <!-- Clickable Footer Logo -->
+<div class="flex justify-center">
+    <a href="index.html">
+        <img src="images/footer-logo.png" alt="Paradise Apartments Logo" class="h-20 mb-8">
+    </a>
+</div>
+        <h3 class="text-black text-2xl font-bold mb-2 justify-center">Paradise Apartments</h3>
+        <p class="text-black">&copy; 2024 Paradise Apartments.</p>
+    </div>
+</div>
+
+
+        <!-- Subscribe Section (As Is) -->
+        <div id="newsletter" class="hidden md:block">
+        <div class="w-full md:w-1/4 flex justify-left">
+          <div class="widget">
+            <h4 class="text-yellow text-lg font-bold mb-4">Get Subscribed</h4>
+            <p class="text-black mb-4 justify-left">Subscribe to get the latest news and resources</p>
+            <form action="#" class="flex flex-col">
+              <input type="email" placeholder="Your Email" class="form-input border-radius 10 bg-green-50 p-2 rounded-md">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-black">Subscribe</button>
+            </form>
+          </div>
+          </div>
+        </div>
+  
+        <!-- Contact Section -->
+        <div id="contact" class="hidden md:block">
+        <div class="w-full md:w-1/4 flex justify-center">
+          <div class="widget text-center">
+            <div class="logo mb-4">
+              <h3 class="text-green text-2xl font-bold">Para<span>dise</span></h3>
+            </div>
+            <h6 class="mb-2"><a href="mailto:havenembu@gmail.com" class="text-blue-400 font-bold hover:text-black">havenembu@gmail.com</a></h6>
+            <a href="tel:+254790564940" class="text-lg text-blue-400 font-bold hover:text-black">+254 790 564940</a>
+          </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+
+<script src="js/main.js"></script>    
+</body>
+</html>

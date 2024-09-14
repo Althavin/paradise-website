@@ -1,0 +1,197 @@
+<!-- Blogs Section on the Homepage -->
+<section id="latest-blogs" class="py-16 bg-gray-50">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Latest Blogs</h2>
+        <div id="blogs-container" class="grid grid-cols-1 gap-8">
+            <!-- Blogs will be dynamically inserted here by JavaScript -->
+        </div>
+        <a href="blogs.html" class="block text-center text-blue-600 hover:underline mt-6">View All Posts</a>
+    </div>
+</section>
+
+<!-- Client Reviews Section -->
+<section id="client-reviews" class="p-8 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Client Reviews</h2>
+    
+    <!-- Feedback Form -->
+    <form id="feedback-form" action="https://formspree.io/f/xnnawdpv" method="POST" class="max-w-xl mx-auto bg-white p-6 shadow-lg rounded-lg">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <textarea name="message" placeholder="Your Feedback" required class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300">Submit Feedback</button>
+    </form>
+    
+    <!-- Feedback Display Section -->
+    <div id="feedback-slideshow" class="mt-10 max-w-4xl mx-auto overflow-hidden relative">
+        <div class="slides-container grid grid-cols-4 gap-4">
+            <!-- Dynamic content will be injected here -->
+        </div>
+
+        <!-- Navigation buttons -->
+        <button id="prev-slide" class="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">&larr;</button>
+        <button id="next-slide" class="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">&rarr;</button>
+    </div>
+</section>
+
+
+<form name="feedback" method="POST" data-netlify="true" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
+    <p>
+      <label>Your Name: <input type="text" name="name" required /></label>
+    </p>
+    <p>
+      <label>Your Picture: <input type="file" name="picture" /></label>
+    </p>
+    <p>
+      <label>Your Feedback: <textarea name="feedback" required></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+ 
+<!--Copy of blog.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blogs.css">
+    <title>Blogs - Paradise Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+     <!-- Header -->
+     <header class="fixed top-0 w-full z-1000 bg-black shadow-md flex justify-between items-center p-6 text-white">
+        <img src="images/main-logo.png" alt="Paradise Booking Logo" class="h-10">
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-gray-400">Home</a></li>
+                <li><a href="blogs.html" class="hover:text-gray-400">Blogs</a></li>
+                <li><a href="about.html" class="hover:text-gray-400">About</a></li>
+                <li><a href="contact.html" class="hover:text-gray-400">Contacts</a></li>
+                <li><a href="tel:+254790564940" class="call-button bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-64 flex items-center justify-center" style="background-image: url('images/hero-bg.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <h1 class="text-4xl font-bold text-white z-10">Our Latest Blogs</h1>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center">
+                <input type="text" id="search-input" placeholder="Search for blogs..." class="p-2 w-full max-w-md border rounded-md">
+                <button id="search-button" class="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog List Section -->
+    <section class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Blog Item -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <a href="#" class="block">
+                        <img src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-1.jpg" alt="Blog 1" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold mb-2"><a href="#" class="hover:text-blue-600">Places to Visit in Embu</a></h2>
+                        <p class="text-gray-600 mb-2">Author Name | February 12, 2020</p>
+                        <p class="text-gray-700 mb-4">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800">Continue Reading →</a>
+                    </div>
+                </div>
+
+                <!-- Add additional blog items here -->
+                
+                <!-- Example Blog Item -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <a href="#" class="block">
+                        <img src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-2.jpg" alt="Blog 2" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold mb-2"><a href="#" class="hover:text-blue-600">10 Tips to Run Your Remote Team Faster</a></h2>
+                        <p class="text-gray-600 mb-2">Author Name | April 04, 2020</p>
+                        <p class="text-gray-700 mb-4">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800">Continue Reading →</a>
+                    </div>
+                </div>
+
+                <!-- Repeat for additional blogs -->
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-center mt-8">
+                <button id="prev-button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Previous</button>
+                <button id="next-button" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-4">Admin Dashboard</h2>
+                <form id="admin-form" class="space-y-4">
+                    <label for="title" class="block text-gray-700">Blog Title</label>
+                    <input type="text" id="title" name="title" class="w-full p-2 border rounded-md" required>
+
+                    <label for="cover-photo" class="block text-gray-700">Cover Photo URL</label>
+                    <input type="text" id="cover-photo" name="cover-photo" class="w-full p-2 border rounded-md" required>
+
+                    <label for="author" class="block text-gray-700">Author Name</label>
+                    <input type="text" id="author" name="author" class="w-full p-2 border rounded-md" required>
+
+                    <label for="date" class="block text-gray-700">Publication Date</label>
+                    <input type="date" id="date" name="date" class="w-full p-2 border rounded-md" required>
+
+                    <label for="content" class="block text-gray-700">Blog Content</label>
+                    <textarea id="content" name="content" rows="4" class="w-full p-2 border rounded-md" required></textarea>
+
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Publish Blog</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     <!--Footer Section-->
+<footer style="background-color: #00766A;" class="text-white py-6">
+    <div class="container mx-auto flex flex-wrap justify-around">
+
+    
+    <!-- Left Section: Navigation Links -->
+    <div class="flex flex-col space-y-2">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="blogs.html" class="hover:text-blue-400">Blogs</a>
+        <a href="about.html" class="hover:text-blue-400">About</a>
+        <a href="contact.html" class="hover:text-blue-400">Contacts</a>
+    </div>
+
+    <!-- Center Section: Logo and Copyright -->
+    <div class="text-center">
+        <img src="images/footer-logo.png" alt="Paradise Booking Logo" class="h-16 mx-auto mb-4">
+        <p>&copy; 2024 Paradise Booking. All rights reserved.</p>
+    </div>
+
+    <!-- Right Section: Newsletter -->
+    <div class="text-right">
+        <p class="mb-2">Subscribe to our newsletter</p>
+        <form class="newsletter flex flex-col space-y-2">
+            <input type="email" id="email" placeholder="Enter your email" class="rounded px-4 py-2 text-gray-900">
+            <div class="container mx-auto flex flex-wrap justify-around">
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Subscribe</button>
+        </form>
+    </div>
+        <script src="js/blogs.js"></script>
+</body>
+
+</html>

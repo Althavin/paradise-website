@@ -1,0 +1,532 @@
+/* General Styles */
+body {
+    font-family: 'Arial Narrow Bold', sans-serif, Helvetica,sans-serif bold;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    background-color: #fbfbfb !important; /* Dark gray background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header img {
+    height: 100px; /* Ensure the logo scales properly */
+}
+
+header ul li a {
+    font-size: 16px;
+    transition: color #000235 0.3s ease;
+}
+
+header ul li a:hover {
+    color:  #000235 ; /* Light gray hover effect */
+}
+header nav .call-button {
+    background-color: #0F03C7 !important;
+    color: #ffffff !important; /* Text color */
+    padding: 10px 20px; /* Padding around the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    margin-left: 20px; /* Space between the button and the last nav item */
+    font-weight: bold; /* Make the text bold */
+}
+
+header nav .call-button:hover {
+    background-color: #0F03C7 !important; /* Darker shade for hover effect */
+    color: #000235; /* Text color on hover */
+
+/* (Ensure to include all your previous styles here) */
+
+/* Media Queries */
+/* Responsive Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .call-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+}
+/* Hero Section Styling */
+#hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 100px !important; /* Add margin to push the hero section below the header */
+    margin-bottom: 120px;
+    padding-bottom: 20px;
+    padding-top: 80px !important;
+}
+
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
+}
+
+
+#hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    z-index: 5; /* Ensure it stays above the video */
+}
+
+@media (max-width: 768px) {
+    #hero-section {
+        height: 70vh;
+    }
+
+    #hero-section .chatbot {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+#chatbot {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10; /* Ensures the chatbot stays above the video */
+    background-color: rgba(37, 211, 102, 0.8); /* Optional: Adds a semi-transparent background */
+    padding: 10px;
+    border-radius: 10px; /* Optional: Rounds the corners of the chatbot container */
+}
+
+.chatbot a {
+    background-color: #25d366;
+    color: white;
+    padding: 10px;
+    border-radius: 0%;
+    text-decoration: none;
+}
+
+/* General styling for service items */
+.services-title {
+    text-align: center; /* Center the title */
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 20px; /* Space below the title */
+    margin-top: 200;
+    color: #333; /* Adjust the color to match your theme */
+}
+.welcome-message {
+    text-align: left; /* Center the title */
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 20px; /* Space below the title */
+    color: #000000; /* Adjust the color to match your theme */
+}
+.our-services {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around the container */
+        box-sizing: border-box; /* Include padding in the total width and height */
+}
+
+.service-item {
+    flex: 1 1 200px; /* Allow items to grow and shrink, with a minimum width */
+    text-align: center;
+    padding: 20px; /* Padding around each item */
+    box-sizing: border-box; /* Include padding in the total width and height */
+    max-width: 300px; /* Maximum width for each item */
+}
+
+.service-item img {
+    width: 100%; /* Make images responsive */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area, maintaining aspect ratio */
+    border-radius: 20px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.service-item h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.service-item p {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.book-room-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.book-room-btn {
+    background-color: #007bff !important;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.book-room-btn:hover {
+    background-color: #e68900 !important;
+}
+
+@media (max-width: 768px) {
+    #our-services {
+        padding: 20px;
+    }
+
+    .service-item {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .service-item img {
+        height: auto;
+        max-height: 200px;
+    }
+}
+
+
+/*Luxury Banner*/
+@media (max-width: 768px) {
+    #luxury-banner h2, #luxury-banner p {
+        font-size: 1.5rem;
+    }
+}
+/*Amenities Styling*/
+/* Amenities Section */
+#amenities {
+    padding: 40px 20px;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    #amenities {
+        padding: 20px;
+    }
+
+    .amenities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .amenity-card img {
+        height: auto;
+        max-height: 150px;
+    }
+}
+
+
+/* Blogs Section */
+#blogs-list {
+    padding: 40px 20px;
+}
+
+.blog-post img {
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #blogs-list {
+        padding: 20px;
+    }
+
+    .blog-post {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .blog-post img {
+        height: auto;
+        max-height: 150px;
+    }
+
+    .blog-post h3 {
+        font-size: 1.2rem;
+    }
+}
+/* Sliding Reviews Styling */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-slide {
+    background-color: white;
+    padding: 1rem;
+    margin: 0 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 25%; /* Each review takes up 25% width */
+    text-align: center;
+}
+
+.review-slide img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#prev-slide {
+    left: 0;
+}
+
+#next-slide {
+    right: 0;
+}
+
+/* About Us Section */
+#about {
+    padding: 50px 0;
+    background-color: #F2E3BC;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.visit-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.visit-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 20px;
+    }
+
+    .about-image, .about-text {
+        text-align: center;
+    }
+}
+
+/* Maps Section */
+
+#maps {
+    padding: 50px 20px;
+}
+
+#maps iframe {
+    width: 100%;
+    height: 300px; /* Reduced height for the map */
+    border: none;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
+/* Footer */
+footer {
+    background-color: #fbfbfb !important;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items in the center vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    padding: 40px !important;
+}
+footer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1; /* Allow navigation to take up available space */
+    padding-left: 20px; /* Add some padding from the left border */
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.footer-logo {
+    flex: 0 1 auto; /* Ensure the logo takes only as much space as it needs */
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    padding: 0 20px; /* Add padding around the logo */
+}
+
+.footer-logo img {
+    max-height: 80px; /* Set a max height for the logo */
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    flex: 1; /* Allow the right section to take up available space */
+    padding-right: 20px; /* Add some padding from the right border */
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.newsletter input {
+    padding: 90px !important;
+    padding-right: 130px !important;
+    width: 80% !important;
+    max-width: 200px !important;
+    border-radius: 5px;
+    border: none;
+}
+
+.newsletter button {
+    padding: 10px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+<!-- Add the CSS styles in your stylesheet -->
+<style>
+    @keyframes zoom-in {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .animate-zoom-in {
+        animation: zoom-in 1.5s ease-out;
+    }
+
+    /* Adjust space between text sections */
+    .space-y-12 > * + * {
+        margin-top: 3rem; /* Increase spacing between each text block */
+    }
+</style>

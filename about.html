@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Paradise Booking</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/main.js"></script>    
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+        </style> 
+        html {
+            scroll-behavior: smooth;
+        }    
+    </head>
+    <body>
+        
+       <!-- Header -->
+<header style="background-color: #ffffff;" class="fixed top-0 w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-2 md:p-4">
+        <!-- Clickable Logo -->
+        <a href="index.html">
+            <img src="images/main-logo.png" alt="Paradise Booking Logo" class="h-10 md:h-14">
+        </a>
+
+        <!-- Mobile "Get in Touch" Button (centered) -->
+        <div class="md:hidden absolute left-1/2 transform -translate-x-1/2">
+            <a href="tel:+254790564940" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Get in Touch</a>
+        </div>        
+        <div class="md:hidden">
+            <!-- Mobile Menu Button -->
+           <button id="menu-toggle" class="focus:outline-none rounded-full border-4 border-blue-500 bg-white p-2">
+                <svg class="w-8 h-8 text-black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+        </div>
+
+        <!-- Desktop Menu -->
+        <div id="menu" class="hidden md:flex flex-1 justify-end">
+            <nav>
+                <ul class="flex space-x-8 pr-4">
+                    <li><a href="index.html" class="text-black hover:text-blue-600">Home</a></li>
+                    <li><a href="admin/index.html" class="text-black hover:text-blue-600">Blogs</a></li>
+                    <li><a href="about.html" class="text-black hover:text-blue-600 font-bold">About</a></li>
+                    <li><a href="contact.html" class="text-black hover:text-blue-600">Contacts</a></li>
+                        <li>
+                            <a href="tel:+254790564940" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-black hover:text-white">
+                                GET IN TOUCH
+                            </a>
+                    </li>
+                                    </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <nav>
+            <ul class="flex flex-col space-y-4 px-4">
+                <li><a href="index.html" class="text-black hover:text-yellow-300 font-bold">Home</a></li>
+                <li><a href="admin/index.html" class="text-black hover:text-yellow-300 font-bold">Blogs</a></li>
+                <li><a href="about.html" class="text-black hover:text-yellow-300 font-bold">About</a></li>
+                <li><a href="contact.html" class="text-black hover:text-yellow-300 font-bold">Contacts</a></li>
+            </ul>
+        </nav>        
+    </div>
+</header>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 mt-16 bg-cover bg-center" style="background-image: url('images/about-background.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full">
+            <h1 class="text-5xl font-bold text-white">About Us</h1>
+        </div>
+    </section>
+    
+
+    <!-- Description Section -->
+    <section class="container mx-auto py-12 px-6 text-left">
+        <p class="text-lg leading-relaxed">
+            <strong>Welcome to Paradise Booking, your gateway to seamless travel experiences. Based in Embu, we specialize in room and apartment bookings, offering personalized services for both short-term and long-term stays. Our commitment to excellence and innovation ensures your comfort and satisfaction, making every stay unforgettable. Discover the paradise you've been searching for with us.</strong>
+        </p>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="bg-gradient-to-r from-green-400 to-blue-500 text-white py-12">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center">
+            <div class="lg:w-7/12 p-6">
+                <h2 class="text-3xl font-semibold mb-4">Our Vision</h2>
+                <p class="text-lg leading-relaxed">
+                    Our vision is to lead the industry with cutting-edge solutions and unmatched service, inspiring innovation and driving positive change in the world.
+                </p>
+            </div>
+            <div class="lg:w-5/12 p-6">
+                <img src="images/vision-image.jpg" alt="Vision" class="w-full h-auto rounded-lg shadow-lg" style="width: 70%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-12">
+        <div class="container mx-auto flex flex-col lg:flex-row-reverse items-center">
+            <div class="lg:w-7/12 p-6">
+                <h2 class="text-3xl font-semibold mb-4">Our Mission</h2>
+                <p class="text-lg leading-relaxed">
+                    Our mission is to deliver top-quality services that exceed client expectations, foster growth, and create lasting value for our customers and stakeholders.
+                </p>
+            </div>
+            <div class="lg:w-5/12 p-6">
+                <img src="images/mission-image.jpg" alt="Mission" class="w-full h-auto rounded-lg shadow-lg" style="width: 70%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-12">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center">
+            <div class="lg:w-7/12 p-6">
+                <h2 class="text-3xl font-semibold mb-4">Our Values</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li class="text-lg">Integrity: We uphold the highest standards of integrity in all our actions.</li>
+                    <li class="text-lg">Innovation: We embrace change and continually seek innovative solutions.</li>
+                    <li class="text-lg">Customer Focus: Our customers are at the heart of everything we do.</li>
+                    <li class="text-lg">Excellence: We strive for excellence in every aspect of our work.</li>
+                </ul>
+            </div>
+            <div class="lg:w-5/12 p-6">
+                <img src="images/values-image.jpg" alt="Values" class="w-full h-auto rounded-lg shadow-lg" style="width: 70%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Counter Section -->
+    <section class="bg-blue-800 text-white py-12">
+        <div class="container mx-auto flex flex-wrap justify-around">
+            <div class="text-center mb-6 lg:mb-0">
+                <div class="text-4xl font-bold">200+</div>
+                <p class="text-lg">Clients Served</p>
+            </div>
+            <div class="text-center mb-6 lg:mb-0">
+                <div class="text-4xl font-bold">3</div>
+                <p class="text-lg">Years in Business</p>
+            </div>
+            <div class="text-center mb-6 lg:mb-0">
+                <div class="text-4xl font-bold">95%</div>
+                <p class="text-lg">Client Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Footer -->
+<footer class="footer section bg-[#ffffff] py-8">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
+        
+        <!-- Quick Links Section -->
+        <div class="w-full md:w-1/4 flex justify-center">
+          <div class="widget text-center">
+            <h4 class="text-red text-green text-lg font-bold mb-4">Quick Links</h4>
+            <ul class="list-none space-y-2">
+              <li><a href="index.html" class="text-blue-600 font-bold hover:text-black">Home</a></li>
+              <li><a href="admin/index.html" class="text-black hover:text-blue-600">Blog</a></li>
+              <li><a href="about.html" class="text-black hover:text-blue-600">About</a></li>
+              <li><a href="contact.html" class="text-black hover:text-blue-600">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Logo & Copyright Section -->
+<div class="w-full md:w-1/4 flex justify-center md:justify-start">
+    <div class="widget text-center md:text-center">
+        <!-- Clickable Footer Logo -->
+<div class="flex justify-center">
+    <a href="index.html">
+        <img src="images/footer-logo.png" alt="Paradise Apartments Logo" class="h-20 mb-8">
+    </a>
+</div>
+        <h3 class="text-black text-2xl font-bold mb-2 justify-center">Paradise Apartments</h3>
+        <p class="text-black">&copy; 2024 Paradise Apartments.</p>
+    </div>
+</div>
+
+
+
+        <!-- Subscribe Section (As Is) -->
+        <div id="newsletter" class="hidden md:block">
+        <div class="w-full md:w-1/4 flex justify-left">
+          <div class="widget">
+            <h4 class="text-yellow text-lg font-bold mb-4">Get Subscribed</h4>
+            <p class="text-black mb-4 justify-left">Subscribe to get the latest news and resources</p>
+            <form action="#" class="flex flex-col">
+              <input type="email" placeholder="Your Email" class="form-input border-radius 10 bg-green-50 p-2 rounded-md">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-black">Subscribe</button>
+            </form>
+          </div>
+          </div>
+        </div>
+  
+        <!-- Contact Section -->
+        <div id="contact" class="hidden md:block">
+        <div class="w-full md:w-1/4 flex justify-center">
+          <div class="widget text-center">
+            <div class="logo mb-4">
+              <h3 class="text-green text-2xl font-bold">Para<span>dise</span></h3>
+            </div>
+            <h6 class="mb-2"><a href="mailto:havenembu@gmail.com" class="text-blue-400 font-bold hover:text-black">havenembu@gmail.com</a></h6>
+            <a href="tel:+254790564940" class="text-lg text-blue-400 font-bold hover:text-black">+254 790 564940</a>
+          </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+    </body>
+</html>
