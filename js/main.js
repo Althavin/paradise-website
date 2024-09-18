@@ -189,3 +189,37 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
     });
 </script>
+let currentSlide = 0; // Initialize current slide index
+const reviewsSlideshow = document.getElementById('reviews-slideshow');
+const reviewCards = document.querySelectorAll('.review-card');
+const totalSlides = reviewCards.length;
+const slideWidth = reviewCards[0].clientWidth;
+
+// Function to update the slideshow position
+function updateSlideshowPosition() {
+    const newTransform = -currentSlide * slideWidth;
+    reviewsSlideshow.style.transform = `translateX(${newTransform}px)`;
+}
+
+// Event listener for the "Previous" button
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlideshowPosition();
+    }
+});
+
+// Event listener for the "Next" button
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlideshowPosition();
+    }
+});
+
+// Adjust the slide width on window resize
+window.addEventListener('resize', () => {
+    slideWidth = reviewCards[0].clientWidth;
+    updateSlideshowPosition();
+});
+
