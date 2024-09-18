@@ -282,29 +282,34 @@ header nav .call-button:hover {
         font-size: 1.2rem;
     }
 }
-/* Sliding Reviews Styling */
+
+/* Slideshow container */
 .slideshow-container {
     position: relative;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    overflow: hidden; /* Ensures that only one review is shown at a time */
 }
 
+/* Slide container */
 .slides-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
+/* Each review slide */
 .review-slide {
     background-color: white;
     padding: 1rem;
     margin: 0 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 25%; /* Each review takes up 25% width */
+    min-width: 100%; /* Full width on mobile */
     text-align: center;
 }
 
+/* Image styling inside the review */
 .review-slide img {
     border-radius: 50%;
     width: 60px;
@@ -313,23 +318,25 @@ header nav .call-button:hover {
     margin-bottom: 10px;
 }
 
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    padding: 1rem;
-    border: none;
-    cursor: pointer;
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    /* Show only one review at a time on mobile */
+    .review-slide {
+        min-width: 100%; /* Each review will take full width */
+    }
 }
 
-#prev-slide {
-    left: 0;
-}
+/* Desktop-specific adjustments */
+@media (min-width: 769px) {
+    /* For desktop view */
+    .review-slide {
+        min-width: 25%; /* Show 4 reviews at a time */
+    }
 
-#next-slide {
-    right: 0;
+    /* Center the review container */
+    .slides-container {
+        justify-content: center;
+    }
 }
 
 /* About Us Section */
